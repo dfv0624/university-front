@@ -1,0 +1,39 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Departament</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
+
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <td>DepartamentID</td>
+        <td>Name</td>
+        <td>Budget</td>
+        <td>StartDate</td>
+        <a [routerLink]="[ '/departament-create']">Add</a>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let departament of Departaments">
+        <td>{{ departament.DepartmentID}}</td>
+        <td>{{ departament.Name}}</td>
+        <td>{{ departament.Budget}}</td>
+        <td>{{ departament.StartDate}}</td>
+       
+        <td>
+            <a [routerLink]="[ '/departament-edit', departament.DepartmentID ]">Edit</a>
+            <br>
+            <a [routerLink]="[ '/departament-delete', departament.DepartmentID ]">Delete</a>
+            <br>
+        </td>
+    </tr>
+</tbody>
+
+</table>
+
+
+</div>

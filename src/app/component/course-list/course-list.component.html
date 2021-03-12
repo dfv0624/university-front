@@ -1,0 +1,37 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Courses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
+
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <td>CourseID</td>
+        <td>Title</td>
+        <td>Credits</td>
+        <a [routerLink]="[ '/course-create']">Add</a>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let course of Courses">
+        <td>{{ course.CourseID}}</td>
+        <td>{{ course.Title}}</td>
+        <td>{{ course.Credits}}</td>
+     
+       
+        <td>
+            <a [routerLink]="[ '/course-edit', course.CourseID ]">Edit</a>
+            <br>
+            <a [routerLink]="[ '/course-delete', course.CourseID ]">Delete</a>
+        </td>
+    </tr>
+</tbody>
+
+</table>
+
+
+</div>

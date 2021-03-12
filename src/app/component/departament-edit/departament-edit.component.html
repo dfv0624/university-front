@@ -1,0 +1,43 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/departament-list']">Departament</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+        </ol>
+    </nav>
+
+    <h2>Edit Departament</h2>
+    <hr>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #departamentForm="ngForm" *ngIf="Departament">
+        <div class="form-row">
+            <div class="col-md-4 form-floating">
+                <input type="text" id="Name" name="Name" placeholder="Enter the Name" class="form-control"
+                    #Name [(ngModel)]="Departament.Name" autocomplete="off" />
+                <label for="Name">Name</label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input type="text" id="Budget" name="Budget" placeholder="Enter the Budget"
+                    class="form-control" #Budget [(ngModel)]="Departament.Budget" autocomplete="off" />
+                <label for="Budget">Budget</label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input type="StartDate" id="StartDate" name="StartDate" placeholder="Enter the StartDate"
+                    class="form-control" #StartDate [(ngModel)]="Departament.StartDate" autocomplete="off" />
+                <label for="StartDate">StartDate</label>
+            </div>
+        </div>
+        <br>
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary" (click)="edit()">Edit</button>
+            <a class="btn btn-outline-primary" [routerLink]="[ '/departament-list' ]">Back</a>
+        </div>
+    </form>
+</div>

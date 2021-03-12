@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Delete Departament</h2>
+  
+    <div class="form-row" *ngIf="!showMsg">
+      <div class="alert alert-danger col-md-12" role="alert">
+        Are You Sure?
+        <br>
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+          <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/departament-list' ]">Back</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row" *ngIf="showMsg">
+      <div class="alert alert-{{type}} col-md-12" role="alert">
+        {{msg}}
+        <br>
+        <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/departament-list' ]">Back</a>
+      </div>
+    </div>
+  
+    <form #departamentForm="ngForm" *ngIf="departament">
+  
+      <div class="form-row">
+        <div class="col-md-4">
+          <label>ID:</label>
+          <input type="text" id="DepartmentID" name="DepartmentID" placeholder="Enther the Departament ID" class="form-control"
+            #departamentID [(ngModel)]="departament.DepartmentID" readonly />
+        </div>
+        <div class="col-md-4">
+          <label>Title:</label>
+          <input type="text" id="title" name="title" placeholder="Enther the title" class="form-control" #title
+            [(ngModel)]="departament.Name" />
+        </div>
+        <div class="col-md-4">
+          <label>Credits:</label>
+          <input type="text" id="Budget" name="Budget" placeholder="Enther the Budget" class="form-control" #credits
+            [(ngModel)]="departament.Budget" />
+        </div>
+      </div>
+    </form>
+  
+  </div>
+  
